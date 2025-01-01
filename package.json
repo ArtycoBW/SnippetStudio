@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "convex": "next convex dev"
+    "lint": "next lint"
   },
   "dependencies": {
     "@clerk/elements": "^0.22.5",
@@ -25,6 +24,7 @@
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",
     "shadcn": "^2.1.8",
+    "svix": "^1.44.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
