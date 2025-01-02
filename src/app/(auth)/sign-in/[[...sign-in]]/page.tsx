@@ -1,13 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import * as Clerk from '@clerk/elements/common'
@@ -26,19 +19,12 @@ export default function SignInPage() {
                 <Card className="w-full sm:w-96">
                   <CardHeader>
                     <CardTitle>Войдите в Snippet Stido</CardTitle>
-                    <CardDescription>
-                      С возвращением! Пожалуйста, войдите, чтобы продолжить
-                    </CardDescription>
+                    <CardDescription>С возвращением! Пожалуйста, войдите, чтобы продолжить</CardDescription>
                   </CardHeader>
                   <CardContent className="grid gap-y-4">
                     <div className="grid grid-cols-2 gap-x-4">
                       <Clerk.Connection name="github" asChild>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          type="button"
-                          disabled={isGlobalLoading}
-                        >
+                        <Button size="sm" variant="outline" type="button" disabled={isGlobalLoading}>
                           <Clerk.Loading scope="provider:github">
                             {(isLoading) =>
                               isLoading ? (
@@ -54,12 +40,7 @@ export default function SignInPage() {
                         </Button>
                       </Clerk.Connection>
                       <Clerk.Connection name="google" asChild>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          type="button"
-                          disabled={isGlobalLoading}
-                        >
+                        <Button size="sm" variant="outline" type="button" disabled={isGlobalLoading}>
                           <Clerk.Loading scope="provider:google">
                             {(isLoading) =>
                               isLoading ? (
@@ -94,20 +75,14 @@ export default function SignInPage() {
                         <Button disabled={isGlobalLoading}>
                           <Clerk.Loading>
                             {(isLoading) => {
-                              return isLoading ? (
-                                <Loader className="size-4 animate-spin" />
-                              ) : (
-                                'Продолжить'
-                              )
+                              return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                             }}
                           </Clerk.Loading>
                         </Button>
                       </SignIn.Action>
 
                       <Button variant="link" size="sm" asChild>
-                        <Clerk.Link navigate="sign-up">
-                          Нет аккаунта? Зарегистрироваться
-                        </Clerk.Link>
+                        <Clerk.Link navigate="sign-up">Нет аккаунта? Зарегистрироваться</Clerk.Link>
                       </Button>
                     </div>
                   </CardFooter>
@@ -140,11 +115,7 @@ export default function SignInPage() {
                         <Button disabled={isGlobalLoading}>
                           <Clerk.Loading>
                             {(isLoading) => {
-                              return isLoading ? (
-                                <Loader className="size-4 animate-spin" />
-                              ) : (
-                                'Назад'
-                              )
+                              return isLoading ? <Loader className="size-4 animate-spin" /> : 'Назад'
                             }}
                           </Clerk.Loading>
                         </Button>
@@ -159,9 +130,7 @@ export default function SignInPage() {
                   <Card className="w-full sm:w-96">
                     <CardHeader>
                       <CardTitle>Проверьте вашу почту</CardTitle>
-                      <CardDescription>
-                        Введите код подтверждения, отправленный на вашу почту
-                      </CardDescription>
+                      <CardDescription>Введите код подтверждения, отправленный на вашу почту</CardDescription>
                       <p className="text-sm text-muted-foreground">
                         С возвращением <SignIn.SafeIdentifier />
                       </p>
@@ -183,11 +152,7 @@ export default function SignInPage() {
                           <Button disabled={isGlobalLoading}>
                             <Clerk.Loading>
                               {(isLoading) => {
-                                return isLoading ? (
-                                  <Loader className="size-4 animate-spin" />
-                                ) : (
-                                  'Продолжить'
-                                )
+                                return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                               }}
                             </Clerk.Loading>
                           </Button>
@@ -206,9 +171,7 @@ export default function SignInPage() {
                   <Card className="w-full sm:w-96">
                     <CardHeader>
                       <CardTitle>Проверьте вашу почту</CardTitle>
-                      <CardDescription>
-                        Введите код подтверждения, отправленный на вашу почту
-                      </CardDescription>
+                      <CardDescription>Введите код подтверждения, отправленный на вашу почту</CardDescription>
                       <p className="text-sm text-muted-foreground">
                         С возвращением <SignIn.SafeIdentifier />
                       </p>
@@ -226,8 +189,7 @@ export default function SignInPage() {
                                 return (
                                   <div
                                     data-status={status}
-                                    className="relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md data-[status=selected]:ring-1 data-[status=selected]:ring-ring data-[status=cursor]:ring-1 data-[status=cursor]:ring-ring"
-                                  >
+                                    className="relative flex h-9 w-9 items-center justify-center border-y border-r border-input text-sm shadow-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md data-[status=selected]:ring-1 data-[status=selected]:ring-ring data-[status=cursor]:ring-1 data-[status=cursor]:ring-ring">
                                     {value}
                                   </div>
                                 )
@@ -244,8 +206,7 @@ export default function SignInPage() {
                                 Не получили код? Отправить заново (
                                 <span className="tabular-nums">{resendableAfter}</span>)
                               </Button>
-                            )}
-                          >
+                            )}>
                             <Button variant="link" size="sm">
                               Не получили код? Отправить заново
                             </Button>
@@ -259,11 +220,7 @@ export default function SignInPage() {
                           <Button disabled={isGlobalLoading}>
                             <Clerk.Loading>
                               {(isLoading) => {
-                                return isLoading ? (
-                                  <Loader className="size-4 animate-spin" />
-                                ) : (
-                                  'Продолжить'
-                                )
+                                return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                               }}
                             </Clerk.Loading>
                           </Button>

@@ -3,14 +3,7 @@ import * as Clerk from '@clerk/elements/common'
 import * as SignUp from '@clerk/elements/sign-up'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
@@ -27,19 +20,12 @@ export default function SignUpPage() {
                 <Card className="w-full sm:w-96">
                   <CardHeader>
                     <CardTitle>Создайте свой аккаунт</CardTitle>
-                    <CardDescription>
-                      Добро пожаловать! Пожалуйста, заполните данные, чтобы начать.
-                    </CardDescription>
+                    <CardDescription>Добро пожаловать! Пожалуйста, заполните данные, чтобы начать.</CardDescription>
                   </CardHeader>
                   <CardContent className="grid gap-y-4">
                     <div className="grid grid-cols-2 gap-x-4">
                       <Clerk.Connection name="github" asChild>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          type="button"
-                          disabled={isGlobalLoading}
-                        >
+                        <Button size="sm" variant="outline" type="button" disabled={isGlobalLoading}>
                           <Clerk.Loading scope="provider:github">
                             {(isLoading) =>
                               isLoading ? (
@@ -55,12 +41,7 @@ export default function SignUpPage() {
                         </Button>
                       </Clerk.Connection>
                       <Clerk.Connection name="google" asChild>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          type="button"
-                          disabled={isGlobalLoading}
-                        >
+                        <Button size="sm" variant="outline" type="button" disabled={isGlobalLoading}>
                           <Clerk.Loading scope="provider:google">
                             {(isLoading) =>
                               isLoading ? (
@@ -105,19 +86,13 @@ export default function SignUpPage() {
                         <Button disabled={isGlobalLoading}>
                           <Clerk.Loading>
                             {(isLoading) => {
-                              return isLoading ? (
-                                <Loader className="size-4 animate-spin" />
-                              ) : (
-                                'Продолжить'
-                              )
+                              return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                             }}
                           </Clerk.Loading>
                         </Button>
                       </SignUp.Action>
                       <Button variant="link" size="sm" asChild>
-                        <Clerk.Link navigate="sign-in">
-                          Уже есть аккаунт? Войти
-                        </Clerk.Link>
+                        <Clerk.Link navigate="sign-in">Уже есть аккаунт? Войти</Clerk.Link>
                       </Button>
                     </div>
                   </CardFooter>
@@ -146,11 +121,7 @@ export default function SignUpPage() {
                         <Button disabled={isGlobalLoading}>
                           <Clerk.Loading>
                             {(isLoading) => {
-                              return isLoading ? (
-                                <Loader className="size-4 animate-spin" />
-                              ) : (
-                                'Продолжить'
-                              )
+                              return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                             }}
                           </Clerk.Loading>
                         </Button>
@@ -188,8 +159,7 @@ export default function SignUpPage() {
                                         'z-10 ring-2 ring-ring ring-offset-background':
                                           status === 'cursor' || status === 'selected',
                                       },
-                                    )}
-                                  >
+                                    )}>
                                     {value}
                                     {status === 'cursor' && (
                                       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -209,11 +179,10 @@ export default function SignUpPage() {
                           className="text-muted-foreground"
                           fallback={({ resendableAfter }) => (
                             <Button variant="link" size="sm" disabled>
-                              Не получили код? Отправить заново (
-                              <span className="tabular-nums">{resendableAfter}</span>)
+                              Не получили код? Отправить заново (<span className="tabular-nums">{resendableAfter}</span>
+                              )
                             </Button>
-                          )}
-                        >
+                          )}>
                           <Button type="button" variant="link" size="sm">
                             Не получили код? Отправить заново
                           </Button>
@@ -226,11 +195,7 @@ export default function SignUpPage() {
                           <Button disabled={isGlobalLoading}>
                             <Clerk.Loading>
                               {(isLoading) => {
-                                return isLoading ? (
-                                  <Loader className="size-4 animate-spin" />
-                                ) : (
-                                  'Продолжить'
-                                )
+                                return isLoading ? <Loader className="size-4 animate-spin" /> : 'Продолжить'
                               }}
                             </Clerk.Loading>
                           </Button>

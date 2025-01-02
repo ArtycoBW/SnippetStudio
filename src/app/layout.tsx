@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
-import { neobrutalism } from '@clerk/themes'
+import { dark, neobrutalism } from '@clerk/themes'
 import { ruRU } from '@clerk/localizations'
 import ConvexClientProvider from '@/components/providers/ConvexClientProvider'
 
@@ -31,13 +31,16 @@ export default function RootLayout({
     <ClerkProvider
       localization={ruRU}
       appearance={{
-        baseTheme: [neobrutalism],
+        baseTheme: [dark],
         variables: {
           colorPrimary: '#FFA500',
         },
       }}>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}><ConvexClientProvider>{children}</ConvexClientProvider></body>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-900 to-gray-950 text-gray-100 flex flex-col`}>
+          <ConvexClientProvider>{children}</ConvexClientProvider>
+        </body>
       </html>
     </ClerkProvider>
   )

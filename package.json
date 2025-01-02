@@ -6,19 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@clerk/elements": "^0.22.5",
     "@clerk/localizations": "^3.9.5",
     "@clerk/nextjs": "^6.9.6",
     "@clerk/themes": "^2.2.3",
+    "@monaco-editor/react": "^4.6.0",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "convex": "^1.17.4",
     "eslint-plugin-prettier": "^5.2.1",
+    "framer-motion": "^11.15.0",
     "lucide-react": "^0.469.0",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
@@ -26,7 +29,8 @@
     "shadcn": "^2.1.8",
     "svix": "^1.44.0",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
